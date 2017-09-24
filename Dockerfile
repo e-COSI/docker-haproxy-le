@@ -32,7 +32,7 @@ RUN /opt/letsencrypt/letsencrypt-auto --os-packages-only && \
 COPY letsencrypt/cli.ini /etc/letsencrypt/cli.ini
 
 # Insert certificate renewal in crontab
-COPY create_certificate /opt
+COPY create_certificate.sh /opt
 
 #RUN crontab -l | { cat; echo "30 01 01 */2 * /root/create_certificate e-cosi.com &>> /var/log/create_certificate.log"; } | crontab -
 
