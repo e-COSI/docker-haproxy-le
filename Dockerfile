@@ -39,6 +39,8 @@ COPY create_certificate.sh /opt
 VOLUME /etc/letsencrypt
 # container entrypoint setup
 COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 # configure whole container
